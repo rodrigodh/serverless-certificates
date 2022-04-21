@@ -46,8 +46,21 @@ const serverlessConfiguration: AWS = {
         },
       ],
     },
+
+    verifyCertificate: {
+      handler: "src/functions/verifyCertificate.handler",
+      events: [
+        {
+          http: {
+            path: "verifyCertificate/{id}",
+            method: "get",
+            cors: true,
+          },
+        },
+      ], 
+    }
   },
-  package: { individually: true },
+  package: { individually: false, include: ["./src/templates/**"] },
   custom: {
     esbuild: {
       bundle: true,

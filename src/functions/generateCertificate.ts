@@ -111,6 +111,5 @@ export const handler: APIGatewayProxyHandler = async (event) => {
       message: "Certificado criado com sucesso",
       url: `https://certificateignitenode.s3.amazonaws.com/${id}.pdf`, 
     }),
-    
   };
 };
